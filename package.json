@@ -1,7 +1,7 @@
 {
-  "name": "unoflex-lite",
+  "name": "unoflex",
   "version": "0.7.2",
-  "description": "A lightweight scss boilerplate",
+  "description": "A Simple and lightweight flexbox boilerplate",
   "main": "index.js",
   "repository": {
     "type": "git",

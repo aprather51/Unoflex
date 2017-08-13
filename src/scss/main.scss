@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Saira:400,500,700');
+
 $primary: #132333;
 $second: #f2711c;
 
@@ -10,6 +12,7 @@ $second: #f2711c;
 // *********** Body **************
 body{
   background-color: #eee;
+  font-family: 'Saira', sans-serif;
 }
 .col {
   padding: 15px; 
