@@ -1,0 +1,130 @@
+$primary: #132333;
+$second: #f2711c;
+
+// *********** Media **************
+@media only screen and (max-width: 520px) {
+    // nav li { padding: 24px 4px; }
+    // nav li a { font-size: 14px; }
+}
+
+// *********** Body **************
+body{
+  background-color: #eee;
+}
+.col {
+  padding: 15px; 
+  text-align: center;
+}
+header{
+  background-color: $primary;
+  color: #fff;
+  padding: 2rem;
+  height: 100vh; 
+  .headline{
+    font-size: 6rem;
+  }
+}
+main{
+  width: 1200px;
+  margin: 0 auto;
+}
+aside{
+	width: 17%;
+	height: 100vh;
+  position: absolute;
+  padding: 1rem 2rem;
+  transition: 200ms;
+  .aside-title{
+    color: $primary;
+    font-size: 2rem;
+    border-bottom: 2px solid $second;
+  }
+}
+nav{
+  margin-top: 20px;
+  h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  li{
+    display: block;
+    list-style: none;
+    padding: .4rem 0;
+    a{
+      text-decoration: none;
+      color: $primary;
+    }
+  }
+}
+article{
+	float: right;
+	width: 80%;
+}
+section{
+  padding: .5rem 2rem;
+}
+.section-title{
+  color: $primary;
+  border-bottom: 2px solid $second;
+  max-width: 30%;
+  padding: .4rem 0;
+  margin: 1rem 0;
+}
+
+// ***********Example Style ***********
+.list{
+  padding-left: 1.2rem;
+  li{
+    list-style-type: disc;
+  }
+}
+//code
+code{
+  color: $second;
+}
+
+// Row-Column Boxes
+.innerbox{
+  background: $primary;
+  color: $second;
+  margin: 3px;
+}
+.outerbox{
+  background: $second;
+}
+.box{
+  margin: .5rem 0;
+}
+
+//override prism
+pre[class*="language-"]{
+  border-radius: 0 !important;
+  margin: 1rem 0 !important;
+}
+
+/* This class is added on scroll */
+.fixed {
+	position: fixed;
+	top: 0;
+	height: 100vh;;
+  z-index: 1;
+  background: $primary;
+  .aside-title{
+    color: #fff;
+  }
+  nav li a{
+    color: #fff;
+
+  }
+}
+
+//Spacing Row
+
+.row-space{
+  margin: .5rem;
+}
+
+.col-space{
+  margin: .5rem;
+}
+

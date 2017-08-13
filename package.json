@@ -1,0 +1,34 @@
+{
+  "name": "unoflex-lite",
+  "version": "0.7.2",
+  "description": "A lightweight scss boilerplate",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+aprather51+https://github.com/aprather51/NPM_Script_Taskrunner.git"
+  },
+  "scripts": {
+    "start": "parallelshell \"npm run watch-css\" \"npm run serve\" ",
+    "serve": "lite-server",
+    "watch-css": "nodemon -e scss -x \"npm run docs-css\"",
+    "build-prod": "npm run clean-css && npm run build-dist && npm run docs-css",
+    "build-dist": "rimraf dist/css && npm run dist-css-unoflex &&npm run dist-min-unoflex",
+    "dist-css-unoflex": "node-sass -r src/scss/unoflex.scss -o dist/css/ && postcss -u autoprefixer -r dist/css/*",
+    "dist-min-unoflex": "node-sass -r src/scss/unoflex.scss | cleancss -o dist/css/unoflex.min.css && postcss -u autoprefixer -r dist/css/*",
+    "docs-css": "node-sass -r src/scss/ -o docs/css/ && postcss -u autoprefixer -r docs/css/*",
+    "clean-css": "rimraf dist/css && rimraf docs/css"
+  },
+  "author": "Arthur Prather",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "clean-css-cli": "^4.1.6",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "parallelshell": "^3.0.1",
+    "postcss": "^6.0.8",
+    "postcss-cli": "^4.1.0",
+    "rimraf": "^2.6.1"
+  }
+}

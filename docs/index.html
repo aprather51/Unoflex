@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/unoflex.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="prism/prism.css">
+    <title>Unoflex-Lite</title>
+</head>
+<body>
+    <header>
+        <h1 class="headline row center">Unoflex</h1>
+        <p class="description row center">A Simple flexible grid based on css &nbsp;<code> display: flex;</code></p>
+    </header>
+    <aside>
+            <nav class="text-ctr">
+                <h3 class="aside-title row center">Unoflex</h3>
+                <li><a href="#container">Container</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#button">Buttons</a></li>
+                <li><a href="#form">Form</a></li>
+            </nav>
+        </aside>
+    <main>
+    <article>
+        <!-- Container -->
+        <section id="container" class="container">
+            <h2 class="section-title">Container</h2>
+            <p>Container with padding at 2rem</p>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="container">&lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+        </section>
+        <!-- Grid -->
+        <section id="grid" class="grid">
+            <h2 class="section-title">Grid</h2>
+            <p>Flexbox grid system to render fluid reponsive screen for easy and flexible use.</p>
+            <h4>Rules of grid system</h4>
+            <ul class="list">
+                <li>The <code>.container</code> should be placed at the first part of body for proper screen alignment and padding.</li>
+                <li>The <code>.row</code> should be placed inside <code>.container</code> to display multiple columns in group</li>
+                <li>Create another <code>.row</code> If necessary to separate columns in group</li>
+                <li>With flexbox <code>.col</code> can be added as many inside <code>.row</code> (Eight to Ten column will suffice).</li>
+            </ul>
+            <h4>Fluid Grid</h4>
+            <p>An column with default 100% width size and any number of column that is added within inside of <code>.row</code> will automatically divide by 100% to get an equal width based on device screen width and column size.</p>
+            <div class="box">
+                <div class="row outerbox">
+                    <div class="col innerbox">100%</div>
+                </div>
+                <div class="row outerbox">
+                    <div class="col innerbox">50%</div>
+                    <div class="col innerbox">50%</div>
+                </div>
+                <div class="row outerbox">
+                    <div class="col innerbox">33%</div>
+                    <div class="col innerbox">33%</div>
+                    <div class="col innerbox">33%</div>
+                </div>
+                <small><i><strong>Note:</strong>The default space between column is set at 0 (margin 0).</i></small>
+            </div>
+            <p>Its possible to add many column in one row, but subtainable and resonable would be up to 8 to 10 column.</p>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row">
+                    &lt;div class="col">100%&lt;/div>
+                &lt;/div>
+                &lt;div class="row">
+                    &lt;div class="col">50%&lt;/div>
+                    &lt;div class="col">50%&lt;/div>
+                &lt;/div>
+                &lt;div class="row">
+                    &lt;div class="col">33%&lt;/div>
+                    &lt;div class="col">33%&lt;/div>
+                    &lt;div class="col">33%&lt;/div>
+                &lt;/div>
+            </code></pre>       
+            <!-- ***code*** -->
+            
+            <h4>Flex Grid Set</h4>
+            <p>Sets of flex grid</p>
+            <ul class="list">
+                <li>flex 25% <code>set25</code></li>
+                <li>flex 25% <code>set50</code></li>
+                <li>flex 75% <code>set50</code></li>
+            </ul>
+            <p>Setting up width 25% and 75%. By adding <code>set25</code> and <code>set75</code> next to <code>col</code></p>
+            <div class="row outerbox">
+                <div class="col set25 innerbox">25%</div>
+                <div class="col set75 innerbox">75%</div>
+            </div>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row">
+                    &lt;div class="col set25">25%&lt;/div>
+                    &lt;div class="col set75">75%&lt;/div>
+                &lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+            <p>50% and 50% column in single row</p>
+            <div class="row outerbox">
+                <div class="col set50 innerbox">50%</div>
+                <div class="col set50 innerbox">50%</div>
+            </div>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row">
+                    &lt;div class="col set50">50%&lt;/div>
+                    &lt;div class="col set50">50%&lt;/div>
+                &lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+            <p>Setting up infamous <a href="https://en.wikipedia.org/wiki/Holy_Grail_(web_design)" target="_blank">Holy Grial</a> layout.</p>
+            <div class="row outerbox">
+                <div class="col set25 innerbox">25%</div>
+                <div class="col set50 innerbox">50%</div>
+                <div class="col set25 innerbox">25%</div>
+            </div>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row">
+                    &lt;div class="col set20">25%&lt;/div>
+                    &lt;div class="col set50">50%&lt;/div>
+                    &lt;div class="col set25">25%&lt;/div>
+                &lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+        
+            <h4>Nestable</h4>
+            <p>The grid that goes inside the grid infinitely.</p>
+            <div class="row outerbox">
+                <div class="col innerbox">
+                    <div class="row outerbox">
+                        <div class="col innerbox">Nestable</div>
+                        <div class="col innerbox">Nestable</div>
+                    </div>
+                    <div class="row outerbox">
+                            <div class="col innerbox">Nestable</div>
+                            <div class="col innerbox">Nestable</div>
+                        </div>
+                </div>
+                <div class="col innerbox">
+                    <div class="row outerbox centerlized">
+                        <div class="col innerbox">Nestable</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row">
+                    &lt;div class="col set20">25%&lt;/div>
+                    &lt;div class="col set50">50%&lt;/div>
+                    &lt;div class="col set25">25%&lt;/div>
+                &lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+
+            <h4>Spacing</h4>
+            <p>There are no spacing anywhere in grid system. Although, it can be customized in css style at your preference. The default grid without spacing allow you to have more options in styling the grid.</p>
+            <h5>Spacing between Rows</h5>
+            <p>The example below shown custom class name <code>.row-space</code> contain margin size at .5rem. Renders spacing between row (horizon).</p>
+            <div class="row row-space outerbox">
+                    <div class="col innerbox">100%</div>
+            </div>
+            <div class="row row-space outerbox">
+                <div class="col innerbox">50%</div>
+                <div class="col innerbox">50%</div>
+            </div>
+            <div class="row row-space outerbox">
+                <div class="col innerbox">33%</div>
+                <div class="col innerbox">33%</div>
+                <div class="col innerbox">33%</div>
+            </div>
+            <p>CSS</p>
+            <!-- ***code*** -->
+            <pre><code class="language-css">
+                   .row-space{ margin: .5rem}
+            </code></pre>
+            <!-- ***code*** -->
+            <p>HTML</p>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row col-space">
+                    &lt;div class="col col-space ">25%&lt;/div>
+                &lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+            <h5>Spacing Between Column</h5>
+            <p>Another example below shown class name <code>.col</code> contain margin size at .5rem. Renders spacing around column (box).</p>
+            <div class="box">
+                <div class="row outerbox">
+                        <div class="col col-space innerbox">100%</div>
+                </div>
+                <div class="row outerbox">
+                    <div class="col col-space innerbox">50%</div>
+                    <div class="col col-space innerbox">50%</div>
+                </div>
+                <div class="row  outerbox">
+                    <div class="col col-space innerbox">33%</div>
+                    <div class="col col-space innerbox">33%</div>
+                    <div class="col col-space innerbox">33%</div>
+                </div>
+            </div>
+            <p>CSS</p>
+            <!-- ***code*** -->
+            <pre><code class="language-css">
+                .col-space{ margin: .5rem}
+            </code></pre>
+            <!-- ***code*** -->
+            <p>HTML</p>
+            <!-- ***code*** -->
+            <pre><code class="language-html">
+                &lt;div class="row col-space">
+                    &lt;div class="col col-space ">25%&lt;/div>
+                &lt;/div>
+            </code></pre>
+            <!-- ***code*** -->
+        </section>
+        <section id="button" class="button">
+            <button>Button</button>
+            <button class="pillBtn">Pill</button>
+            <button class="roundBtn">Round</button>
+            <button class="outline">Outline</button>
+        </section>
+        <!-- Typography -->
+        <section id="typography" class="typography">
+            <h3 class="section-title">Typography</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde fugit, dolore placeat porro praesentium quo assumenda voluptatum cupiditate quisquam, obcaecati soluta vitae veniam ducimus voluptates. Consequatur commodi, perspiciatis molestiae reprehenderit.</p>
+        </section>
+    </article>
+    </main>
+    
+
+     
+    <!--Js/JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./prism/prism.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

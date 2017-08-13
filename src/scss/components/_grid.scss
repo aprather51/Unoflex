@@ -1,0 +1,23 @@
+.container{ 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+} 
+
+.col { flex-basis: 100%; }
+
+@media screen and (min-width: 800px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .col { flex: 1; }
+  .set75 { flex: 7.5; }
+  .set50 { flex: 5; }
+  .set25 { flex: 2.5; }
+
+}
+
