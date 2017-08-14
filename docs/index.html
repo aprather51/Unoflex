@@ -28,7 +28,7 @@
             <li><a href="#grid">Grid</a></li>
             <li><a href="#button">Buttons</a></li>
             <li><a href="#form">Form</a></li>
-            <li><a href="#form">Typography</a></li>
+            <li><a href="#typography">Typography</a></li>
         </nav>
     </aside>
 
@@ -37,7 +37,7 @@
         <article>
 
             <!-- Container -->
-            <section id="container" class="container">
+            <section id="container" class="section-group">
                 <h2 class="section-title">Container</h2>
                 <p>Default Container with padding of 2rem</p>
                 <!-- ***code*** -->
@@ -48,7 +48,7 @@
             </section>
 
             <!-- Grid -->
-            <section id="grid" class="grid">
+            <section id="grid" class="section-group">
                 <h2 class="section-title">Grid</h2>
                 <p>Using Flexbox grid system to render fluid reponsive screen for easy and flexible use.</p>
                 <h4 class="area-title">Set Rules on Grid System</h4>
@@ -237,7 +237,7 @@
             </section>
 
             <!-- Buttons -->
-            <section id="button" class="button">
+            <section id="button" class="section-group">
                 <h3 class="section-title">Buttons</h3>
                 <p>A minimalistic buttons that allows customization in variety shape, size and color using scss/css methods to enhance project layout much more quicker and easy.</p>
                 <!-- // -->
@@ -267,7 +267,7 @@
                 </code></pre>
                 <!-- ***code*** -->
                 <h4 class="area-title">Mixin & Variable</h4>
-                <p><strong>SCSS</strong> - The button setting is already set up with <code>@mixin</code> as default. Use variable (<i>i.e, <code>$bgColor</code>, <code>$color</code>, <code>$radius</code>, and <code>$border</code> </i>) to make a custom change.</p>
+                <p>The default button is already set up with sass <code>@mixin</code> Use variable (<i>i.e, <code>$bgColor</code>, <code>$color</code>, <code>$radius</code>, and <code>$border</code> </i>) to make a custom change.</p>
                 <div class="box">
                     <table>
                         <tr>
@@ -276,32 +276,32 @@
                         </tr>
                         <tr>
                             <td>$bgColor</td>
-                            <td>Set Background Color of Button</td>
+                            <td>Set any background color on button <strong>Note:</strong> Outline button Background will always be transparent except for on hover.</td>
                         </tr>
                         <tr>
                             <td>$color</td>
-                            <td>Set Text Color of Button</td>
+                            <td>Set any text color on button</td>
                         </tr>
                         <tr>
                             <td>$hoverColor</td>
-                            <td>Set hover Text Color of Button (For Outline Button Only)</td>
+                            <td>Set hover text color on button (For Outline Button Only)</td>
                         </tr>
                         <tr>
                             <td>$borderRadius</td>
-                            <td>Set border (corner) radius of Button</td>
+                            <td>Transform depth corner of button from Hard corner to pill-like.</td>
                         </tr>
                         <tr>
                             <td>$borderRadius</td>
-                            <td>Set border type of button. (<i>i.e. border thickness, color and etc.</i>)</td>
+                            <td>Set border thickness, color and etc. surround button.</td>
                         </tr>
                     </table>
                 </div>
-                <p>Example on mixin and variable used in SCSS</p>
+                <p>Example on mixin and variable used in SCSS that gives result to default buttons above.</p>
                 <!-- ***code*** -->
                 <pre><code class="language-sass">
                     $bgColor: #d3d3d3; 
                     $color: #454545;
-                    $radius: .5rem;
+                    $radius: 0rem;
                     $border: 2px solid $bgColor;
 
                     .btn{
@@ -309,7 +309,7 @@
                     }
                 </code></pre>
                 <!-- ***code*** -->
-                <p>There are two sets of buttons which can be used:
+                <p>Although there are two sets of default buttons that can be used:
                 <ol>
                     <li><code><strong>@include btnSolid</strong></code> - Solid Button with background.</li>
                     <li><code><strong>@include btnOutline</strong></code> - Border button with invisible background.</li>
@@ -328,7 +328,7 @@
                 </div>
 
                 <h4 class="area-title">Custom Button</h4>
-                <p>Create customized button, Be sure to set <code>@import "./components/button"</code> at the top of file and Set variable and button class name of your preference inside <strong>_custom.scss</strong> or any scss file with own name.</p>
+                <p>The button can be customized. To do this, create separate scss file i.e. <strong>_custom.scss</strong> or any scss file name. Include <code>@import "./components/button"</code> at the top of file, customize the variable name with any value and button class name of your preference. see example below.</p>
 
                 <h5 class="area-title">Button: Solid</h5>
                 <p>HTML</p>
@@ -344,7 +344,7 @@
 
                     $bgColor: #f00;
                     $color: #fff;
-                    $radius: .5rem;
+                    $radius: 0rem;
                     $border: 2px solid $bgColor;
 
                     /* Custom Class Name */
@@ -353,16 +353,11 @@
                     }
                 </code></pre>
                 <!-- ***code*** -->
-                <br>
                 <p>Result for <strong>solid</strong> Button</p>
                 <div class="box">
                     <button class="mySolidButton">Button</button>
                 </div>
-                <br>
-                <p><strong>btnSolid mixin:</strong> <br>
-                <code><strong>@include btnSolid($bgColor, $color, $radius, $border);</strong></code>
-                <br>
-                
+
                 <br>
                 <h5 class="area-title">Button: Outline</h5>
                 <p>HTML</p>
@@ -372,13 +367,14 @@
                 </code></pre>
                 <!-- ***code*** -->
                 <p>SCSS Customization example for Outline Button inside <strong>_custom.scss</strong></p>
+                <!-- ***code*** -->
                 <pre><code class="language-sass">
                     @import "./components/button"
 
                     $bgColor: #00F;
                     $color: $bgColor;
                     $hoverColor: #fff;
-                    $radius: .5rem;
+                    $radius: 0rem;
                     $border: 2px solid $bgColor;
                     
                     /*Custom Class Name*/
@@ -391,10 +387,75 @@
                 <div class="box">
                     <button class="myOutlineButton">Button</button>
                 </div>
-            
+            </section>
+
+            <!-- Form -->
+            <section id="form" class="section-group">
+                <h3 class="section-title">Form</h3>
+                <p>Most basic form with inputs</p>
+                <form>
+                    <input type="text" placeholder="name">
+                    <input type="email" placeholder="email">
+                    <select>
+                        <option disabled selected>Please Choose </option>
+                        <option value="choice-1">Choice 1</option>
+                        <option value="choice-2">Choice 2</option>
+                        <option value="choice-3">Choice 3</option>
+                    </select>
+                    <textarea rows="3" placeholder="enter your message"s></textarea>
+                    <div class="formSet">
+                        <label><input type="radio"> Radio</label>
+                    </div>
+                    <div class="formSet">
+                        <label><input type="checkbox"> Check</label>
+                    </div>
+                    <input class="btnDefault" type="button" value="submit">
+                </form>
+                <!-- ***code*** -->
+                <pre><code class="language-html">
+                    &lt;form>
+                        &lt;input type="text" placeholder="name">
+                        &lt;input type="email" placeholder="email">
+                        &lt;select>
+                            &lt;option disabled selected>Please Choose &lt;/option>
+                            &lt;option value="choice-1">Choice 1&lt;/option>
+                            &lt;option value="choice-2">Choice 2&lt;/option>
+                            &lt;option value="choice-3">Choice 3&lt;/option>
+                        &lt;/select>
+                        &lt;textarea rows="3" placeholder="enter your message"s>&lt;/textarea>
+                        &lt;div class="formSet">
+                            &lt;label>&lt;input type="radio"> Radio&lt;/label>
+                        &lt;/div>
+                        &lt;div class="formSet">
+                            &lt;label>&lt;input type="checkbox"> Check&lt;/label>
+                        &lt;/div>
+                        &lt;input class="btnDefault" type="button" value="submit">
+                    &lt;/form>
+                </code></pre>
+                
+                <pre><code class="language-html">
+                    &lt;form>
+                        &lt;input type="password" value="name">
+                    &lt;/form>
+                </code></pre>
+
+                <h4 class="area-title">Validation</h4>
+                <p>The validation with red border surrounded using <code>class="hasError"</code> can be assigned as className in JavaScript</p>
+                <form>
+                    <input class="hasError" type="password" value="name">
+                </form>
+                <!-- ***code*** -->
+                <pre><code class="language-html">
+                    &lt;form>
+                        &lt;input class="hasError" type="password" value="name">
+                    &lt;/form>
+                </code></pre>
+
+                
+                
             </section>
             <!-- Typography -->
-            <section id="typography" class="typography">
+            <section id="typography" class="section-group">
                 <h3 class="section-title">Typography</h3>
                 <h1>Heading 1</h1>
                 <h2>Heading 2</h2>

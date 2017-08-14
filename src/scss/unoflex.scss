@@ -1,10 +1,11 @@
+// Custom Configurations
+@import "./base/variables";
+
 // Reset
 @import "./base/normalize";
 @import "./base/reset";
-// base
-@import "./base/override";
 
-//component
+// Components
 @import "./components/button";
 @import "./components/grid";
 @import "./components/form";
@@ -12,5 +13,5 @@
 @import "./components/typography";
 @import "./components/table";
 
-//custom
+//Customize/Override default variables or values.
 @import "custom";

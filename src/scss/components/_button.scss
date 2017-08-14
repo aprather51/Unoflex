@@ -47,10 +47,10 @@
   }
 
 /* Default Color*/
-$bgColor: #d3d3d3;
-$color: #454545;
-$hoverColor: $color;
-$radius: .5rem;
+$bgColor: $liGray;
+$color: $dkGray;
+$hoverColor: $white;
+$radius: 0;
 $border: 2px solid $bgColor;
 
 /*  Button  */

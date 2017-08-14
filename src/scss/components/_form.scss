@@ -1,0 +1,60 @@
+
+//*** Note *** Create Mixin.scss when ready
+@mixin inputArea($border, $borderRadius){
+    display: block;
+    border: $border;
+    border-radius: $borderRadius;
+    padding: .45rem;
+    //outline: none;
+    background: transparent;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1;
+}
+
+// Input Boxes 
+$border: 1px solid $midGray;
+$borderRadius: 0;
+
+[type=color], 
+[type=date], 
+[type=datetime-local], 
+[type=datetime], 
+[type=email], 
+[type=month], 
+[type=number], 
+[type=password], 
+[type=search], 
+[type=tel], 
+[type=text], 
+[type=time], 
+[type=url], 
+[type=week], 
+select, 
+textarea{
+    @include inputArea($border ,$borderRadius);
+}
+
+//Checkbox, Radio
+// [type=checkbox],
+// [type=radio]
+
+
+// Form Default set
+form{
+    padding: 2rem;
+    margin: 0 auto 1rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.formSet{
+    margin: .5rem 0;
+}
+
+//Input Error Indication
+.hasError{
+    border: 2px solid red;
+}
