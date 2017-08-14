@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+aprather51+https://github.com/aprather51/NPM_Script_Taskrunner.git"
+    "url": "git+aprather51+https://github.com/aprather51/https://github.com/aprather51/Unoflex.git"
   },
   "scripts": {
     "start": "parallelshell \"npm run watch-css\" \"npm run serve\" ",
