@@ -1,0 +1,29 @@
+//import
+@import "./components/button";
+
+//Custom 
+
+$bgColor: #f00;
+$color: #fff;
+$radius: .5rem;
+$border: 2px solid $bgColor;
+
+.mySolidButton{
+    @include btnSolid($bgColor, $color, $radius, $border);
+    width: 30%;
+}
+
+$bgColor: #00F;
+$color: $bgColor;
+$hoverColor: #fff;
+$radius: .5rem;
+$border: 2px solid $bgColor;
+
+.myOutlineButton{
+    @include btnOutline($bgColor, $color, $hoverColor, $radius, $border);
+    width: 30%;
+}
+
+.btnSolid, .btnOutline{ 
+    width: 50%;
+}

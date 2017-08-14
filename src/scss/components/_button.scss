@@ -1,34 +1,74 @@
-// button{
-//     background-color: #d3d3d3;
-//     color: #454545;
-//     font-weight: 500;
-//     display: inline-block;
-//     line-height: 1;
-//     text-align: center;
-//     white-space: nowrap;
-//     vertical-align: middle;
-//     cursor: pointer;
-//     border: none;
-//     border-radius: .2em;
-//     padding: .5em 1.2em;
-//     &:active{
-//       outline: none;
-//       border: none;
-//     }
-//   }
+/* Button Default */
+@mixin btnSolid($bg, $color, $borderRadius, $border) {
+    background: $bg;
+    color: $color;
+    font-weight: 500;
+    display: inline-block;
+    padding: .5em 1.2em;
+    border: $border;
+    border-radius: $borderRadius;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+        background:darken($bg,8%);
+        color: $color;
+        transition: all 0.1s ease;
+    }
+    &:active {
+        background:darken($bg,25%);
+        color: $color;
+    } 
+}
+
+@mixin btnOutline($bg, $color, $hoverColor, $borderRadius, $border) {
+    background: transparent;
+    color: $color;
+    font-weight: 500;
+    display: inline-block;
+    padding: .5em 1.2em;
+    border: $border;
+    border-radius: $borderRadius;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    &:hover {
+      background: $bg;
+      color: $hoverColor;
+      transition: all 0.1s ease;
+    }
+    &:active {
+      background: $bg;
+      color: $hoverColor;
+    } 
+  }
+
+/* Default Color*/
+$bgColor: #d3d3d3;
+$color: #454545;
+$hoverColor: $color;
+$radius: .5rem;
+$border: 2px solid $bgColor;
+
+/*  Button  */
+/*  
+    Class name can be customized.
+    To get Solid Button Use:
+    @include btnSolid (Background-Color, Color, BorderRadius, Border)
+    To get Outline Button Use:
+    @include btnSolid (Background-Color, Color, BorderRadius, Border)
+    Button Background-Color, Font Color, Border Radius and Border Type can be changed. 
+*/
+.btnSolid{
+    @include btnSolid($bgColor, $color, $radius, $border);
+}
+
+.btnOutline{
+    @include btnOutline($bgColor, $color, $hoverColor, $radius, $border);
+}
 
 
-//   .pillBtn{
-//       border-radius: 1rem;
-//   }
-
-//   .roundBtn{
-//       width: 10px;
-//       height: 10px;
-//   }
-
-//   .outline{
-//     border-style: solid;
-//     border-width: .1rem;
-//   }
 

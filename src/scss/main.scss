@@ -14,6 +14,7 @@ body{
   background-color: #eee;
   font-family: 'Saira', sans-serif;
 }
+
 .col {
   padding: 15px; 
   text-align: center;
@@ -38,9 +39,7 @@ aside{
   padding: 1rem 2rem;
   transition: 200ms;
   .aside-title{
-    color: $primary;
-    font-size: 2rem;
-    border-bottom: 2px solid $second;
+    color: transparent;
   }
 }
 nav{
@@ -53,9 +52,32 @@ nav{
     display: block;
     list-style: none;
     padding: .4rem 0;
+    font-weight: 500;
     a{
       text-decoration: none;
-      color: $primary;
+      color: transparent;
+      &:hover{
+        color: $second;
+      }
+    }
+  }
+}
+/*Aside Nav show up after scroll up*/
+.fixed {
+	position: fixed;
+	top: 0;
+	height: 100vh;;
+  z-index: 1;
+  background: $primary;
+  .aside-title{
+    color: #fff;
+    font-size: 2rem;
+    border-bottom: 2px solid $second;
+  }
+  nav li a{
+    color: #fff;
+    &:hover{
+      color: $second;
     }
   }
 }
@@ -73,12 +95,23 @@ section{
   padding: .4rem 0;
   margin: 1rem 0;
 }
+.area-title{
+  color: $primary;
+  padding: .4rem 0;
+}
 
 // ***********Example Style ***********
 .list{
-  padding-left: 1.2rem;
   li{
     list-style-type: disc;
+    padding-bottom: 1rem;
+    padding-left: 1.2rem;
+  }
+}
+
+ol{
+  li{
+    padding-bottom: 1rem;
   }
 }
 //code
@@ -98,28 +131,18 @@ code{
 .box{
   margin: .5rem 0;
 }
-
+.btnInfo{
+  font-size: 1rem;
+  font-weight: bold;
+}
 //override prism
 pre[class*="language-"]{
   border-radius: 0 !important;
-  margin: 1rem 0 !important;
+  margin: 0 !important;
 }
 
 /* This class is added on scroll */
-.fixed {
-	position: fixed;
-	top: 0;
-	height: 100vh;;
-  z-index: 1;
-  background: $primary;
-  .aside-title{
-    color: #fff;
-  }
-  nav li a{
-    color: #fff;
 
-  }
-}
 
 //Spacing Row
 
@@ -130,4 +153,6 @@ pre[class*="language-"]{
 .col-space{
   margin: .5rem;
 }
+
+// Button Example
 
