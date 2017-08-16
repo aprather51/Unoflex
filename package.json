@@ -8,15 +8,19 @@
     "url": "git+aprather51+https://github.com/aprather51/https://github.com/aprather51/Unoflex.git"
   },
   "scripts": {
-    "start": "parallelshell \"npm run watch-css\" \"npm run serve\" ",
+    "start": "parallelshell \"npm run scss\" \"npm run serve\" ",
     "serve": "lite-server",
-    "watch-css": "nodemon -e scss -x \"npm run docs-css\"",
-    "build-prod": "npm run clean-css && npm run build-dist && npm run docs-css",
-    "build-dist": "rimraf dist/css && npm run dist-css-unoflex &&npm run dist-min-unoflex",
-    "dist-css-unoflex": "node-sass -r src/scss/unoflex.scss -o dist/css/ && postcss -u autoprefixer -r dist/css/*",
-    "dist-min-unoflex": "node-sass -r src/scss/unoflex.scss | cleancss -o dist/css/unoflex.min.css && postcss -u autoprefixer -r dist/css/*",
-    "docs-css": "node-sass -r src/scss/ -o docs/css/ && postcss -u autoprefixer -r docs/css/*",
-    "clean-css": "rimraf dist/css && rimraf docs/css"
+    "scss": "node-sass -w -r src/scss/ -o docs/css/ && postcss -u autoprefixer -r docs/css/*",
+
+    "build-prod": "npm run clean && npm run build-unoflex && npm run build-scss",
+    "build-unoflex": "npm run unoflex-css && npm run unoflex-min",
+    "build-scss": "node-sass -r src/scss/ -o docs/css/ && postcss -u autoprefixer -r docs/css/*",
+    "unoflex-css": "node-sass -r src/scss/unoflex.scss -o dist/css/ && postcss -u autoprefixer -r dist/css/*",
+    "unoflex-min": "node-sass -r src/scss/unoflex.scss | cleancss -o dist/css/unoflex.min.css && postcss -u autoprefixer -r dist/css/*",
+
+    
+    "clean": "rimraf dist/css && rimraf docs/css"
+    
   },
   "author": "Arthur Prather",
   "license": "MIT",
